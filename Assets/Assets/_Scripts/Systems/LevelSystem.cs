@@ -18,6 +18,9 @@ public class LevelSystem : MonoBehaviour
 
     private void OnXPChanged(float totalXP, float unused)
     {
+        // Unsubscribe before firing event to prevent infinite loop
+        GameEvents.OnXPChanged -= OnXPChanged;
+
         _currentXP = totalXP;
 
         while (_currentXP >= _xpToNextLevel)
@@ -29,6 +32,8 @@ public class LevelSystem : MonoBehaviour
         }
 
         GameEvents.XPChanged(_currentXP, _xpToNextLevel);
+
+        GameEvents.OnXPChanged += OnXPChanged;
     }
 
     public int GetLevel()

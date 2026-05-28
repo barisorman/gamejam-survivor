@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3839097860403385070}
   - component: {fileID: 823681001949690318}
   - component: {fileID: 6161033924732027594}
-  - component: {fileID: 4410094512639176566}
-  m_Layer: 0
+  - component: {fileID: -836027270750329189}
+  m_Layer: 8
   m_Name: GruntEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,7 +157,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.4
---- !u!114 &4410094512639176566
+--- !u!114 &-836027270750329189
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1544439389427934419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a43eb86bc5002a4c8480b76490f98c8, type: 3}
+  m_Script: {fileID: 11500000, guid: b36dfa5cba1b0f04292c19634cc936b4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BaseEnemy
+  m_EditorClassIdentifier: Assembly-CSharp::GruntEnemy
   Data: {fileID: 11400000, guid: e4993a45576345d4db9aadc5a94d91af, type: 2}
