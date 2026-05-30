@@ -44,6 +44,16 @@ public class BaseEnemy : MonoBehaviour
 
         Vector2 direction = ((Vector2)PlayerTransform.position - Rb.position).normalized;
         Rb.MovePosition(Rb.position + direction * Data.MoveSpeed * Time.fixedDeltaTime);
+
+        // Flip sprite based on movement direction
+        if (direction.x < 0f)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+        else if (direction.x > 0f)
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -72,6 +82,12 @@ public class BaseEnemy : MonoBehaviour
         }
 
         _currentHp -= amount;
+
+        HitFlash flash = GetComponent<HitFlash>();
+        if (flash != null)
+        {
+            flash.Flash();
+        }
 
         if (_currentHp <= 0f)
         {

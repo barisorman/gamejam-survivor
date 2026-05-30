@@ -17,6 +17,21 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    private void OnEnable()
+    {
+        GameEvents.OnPlayerDied += OnPlayerDied;
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.OnPlayerDied -= OnPlayerDied;
+    }
+
+    private void OnPlayerDied()
+    {
+        SetGameOver();
+    }
+
     private void Start()
     {
         StartGame();
